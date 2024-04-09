@@ -41,6 +41,11 @@
             text-align: left;
         }
 
+        .navbar .dropdown-menu{
+          width: 120px;
+          font-size: 8px;
+          min-width: 120px;
+        }
 
 
     </style>
@@ -79,9 +84,20 @@
                 <div>
                     <a class="nav-link text-white" th:href="@{/clothes_register}">New Clothes Register</a> <!-- href la dung de xu li khi bam vao-->
                 </div>
-                <div>
-                  <a ces:authorize="isAuthenticated()" class="nav-link text-white" th:href="@{/logout}">Sign out</a> <!-- href la dung de xu li khi bam vao-->
-              </div>
+                <ul class="navbar-nav mb-2 mb-lg-0">
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle text-white" th:href="@{#}" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <span sec:authentication="name"></span>
+                    </a>
+                    <ul class="dropdown-menu bg-dark" aria-labelledby="navbarDropdown">
+                      <li><a class="dropdown-item text-white" target="_blank" >Trang ca nhan</a></li>
+                      <li><a class="dropdown-item text-white" target="_blank">Thong tin chi tiet</a></li>
+                      <li>
+                          <a ces:authorize="isAuthenticated()" class="dropdown-item text-white" th:href="@{/logout}">Sign out</a> <!-- href la dung de xu li khi bam vao-->
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
               </div>
             </div>
           </nav>
