@@ -87,8 +87,9 @@
                         <span sec:authentication="name"></span>
                     </a>
                     <ul class="dropdown-menu bg-dark" aria-labelledby="navbarDropdown">
-                      <li><a class="dropdown-item text-white" target="_blank" >Trang ca nhan</a></li>
-                      <li><a class="dropdown-item text-white" target="_blank">Thong tin chi tiet</a></li>
+                  </li>
+                      <li><a class="dropdown-item text-white" target="_blank" th:href="@{/infor}">Trang ca nhan</a></li>
+                      <li><a class="dropdown-item text-white" target="_blank" >Thong tin chi tiet</a></li>
                       <li>
                           <a ces:authorize="isAuthenticated()" class="dropdown-item text-white" th:href="@{/logout}">Sign out</a> <!-- href la dung de xu li khi bam vao-->
                       </li>

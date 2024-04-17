@@ -38,4 +38,9 @@ public class CustormerController {
         return "loginUser";
     }
 
+    @GetMapping("/infor")
+    public String Infor(){
+        return "inforUser";
+    }
+
 }
