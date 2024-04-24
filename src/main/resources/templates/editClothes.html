@@ -122,6 +122,11 @@
               <label for="prices" class="form-label">Prices</label>
               <input type="text" class="form-control" name="prices" th:value="${clothes.prices}">
           </div>
+<!-- can xoa bo file anh cu rùi thêm file ảnh mới vào -->
+          <div class="mb-3">
+            <label for="imageFileName" class="form-label">Image</label>
+            <input type="file" class="form-control" name="imageFileName" th:value="${clothes.imageFileName}">
+        </div>
 
           <center><button type="submit" class="btn btn-primary">Submit</button></center>
         </form>

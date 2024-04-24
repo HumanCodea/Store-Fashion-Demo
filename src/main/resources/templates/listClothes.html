@@ -114,6 +114,7 @@
               <th scope="col">Color</th>
               <th scope="col">Size</th>
               <th scope="col">Prices</th>
+              <th scope="col">Image</th>
             </tr>
           </thead>
           <tbody>
@@ -123,7 +124,10 @@
               <td th:text="${c.material}"></td>
               <td th:text="${c.color}"></td>
               <td th:text="${c.sizes}"></td>
-              <td th:text="${c.prices}"></td>
+              <td th:text="@{${c.prices} + '$'}"></td>
+              <td>
+                <img th:src="@{'/picture/' + ${c.imageFileName}}" alt="" width="100px">
+              </td>
               <td>
                 <a class="btn btn-secondary btn-sm" th:href="@{/mylist/{id}(id=${c.id})}">Add To MyClothes</a>
                 <a style="color: hsl(240, 100%, 60%)" th:href="@{/editList/{id}(id=${c.id})}" title="Edit Clothes"><i class='bx bxs-edit ms-4'></i></a>

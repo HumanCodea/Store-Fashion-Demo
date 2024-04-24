@@ -96,32 +96,37 @@
 
     <div class="container my-5 p-5" style="border:1px solid black;">
       <h4 class="text-center">New Clothes Register</h4>
-      <form class="col-md-4 offset-md-4" th:action="@{/save}" method="post">
+      <form class="col-md-4 offset-md-4" enctype="multipart/form-data" th:action="@{/save}" th:object="${clothesDto}" method="post">
 
         <div class="mb-3">
           <label for="name" class="form-label">Name Clothes</label>
-          <input type="text" class="form-control" name="nameClothes">
+          <input type="text" class="form-control" name="nameClothes" th:field="${clothesDto.nameClothes}">
       </div>
 
       <div class="mb-3">
           <label for="material" class="form-label">Material</label>
-          <input type="text" class="form-control" name="material">
+          <input type="text" class="form-control" name="material" th:field="${clothesDto.material}">
         </div>
       
       <div class="mb-3">
           <label for="color" class="form-label">Color</label>
-          <input type="text" class="form-control" name="color">
+          <input type="text" class="form-control" name="color" th:field="${clothesDto.color}">
       </div>
 
       <div class="mb-3">
           <label for="sizes" class="form-label">Size</label>
-          <input type="text" class="form-control" name="sizes">
+          <input type="text" class="form-control" name="sizes" th:field="${clothesDto.sizes}">
       </div>
 
       <div class="mb-3">
           <label for="prices" class="form-label">Prices</label>
-          <input type="text" class="form-control" name="prices">
+          <input type="text" class="form-control" name="prices" th:field="${clothesDto.prices}">
       </div>
+
+      <div class="mb-3">
+        <label for="imageFileName" class="form-label">Image</label>
+        <input type="file" class="form-control" name="imageFileName" th:field="${clothesDto.imageFileName}">
+    </div>
 
         <center><button type="submit" class="btn btn-primary">Submit</button></center>
         </form>

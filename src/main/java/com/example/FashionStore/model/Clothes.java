@@ -19,16 +19,21 @@ public class Clothes {
     private String color;
     private String sizes;
     private int prices;
+    @Column(name = "image_file_name")
+    private String imageFileName;
 
     public Clothes() {
     }
 
-    public Clothes(String nameClothes, String material, String color, String sizes, int prices) {
+    public Clothes(String nameClothes, String material, String color, String sizes, int prices, String imageFileName) {
         this.nameClothes = nameClothes;
         this.material = material;
         this.color = color;
         this.sizes = sizes;
         this.prices = prices;
+        this.imageFileName = imageFileName;
     }
+
+    
 
 }

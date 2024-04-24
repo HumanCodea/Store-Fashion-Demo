@@ -84,6 +84,7 @@
               <th scope="col">Color</th>
               <th scope="col">Size</th>
               <th scope="col">Prices</th>
+              <th scope="col">Image</th>
             </tr>
           </thead>
           <tbody>
@@ -93,7 +94,10 @@
               <td th:text="${c.material}"></td>
               <td th:text="${c.color}"></td>
               <td th:text="${c.sizes}"></td>
-              <td th:text="${c.prices}"></td>
+              <td th:text="@{${c.prices} + '$'}"></td>
+              <td>
+                <img th:src="@{ '/image/' + ${c.imageFileName}}" alt="" width="100px">
+              </td>
               </tr>
           </tbody>
         </table>
